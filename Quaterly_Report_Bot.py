@@ -35,18 +35,7 @@ def append_pragraph_to_docx(master, person, document, section):
     # add a blank line
     master.add_paragraph()
 
-
-
-
-
-if __name__ == '__main__':
-    year = 2023
-    qtr = 'Q2'
-    fileLocation = 'C:/Users/Jeff/Downloads/2023Q2/'
-    sections = ["Publications:", "Conference Presentations:", "New Tools, Methods & Datasets:", "Impact and Uptake:",
-        "Capability and Funding:", "Teaching:", "Vision Mātauranga:", "Iwi/hapū & stakeholder engagement and public participation:", 
-        "Awards & Honours:", "Opportunities & Issues:", "Other:"]
-
+def main(year, qtr, fileLocation, sections):
     # create a new master document
     master, masterFN = create_new_master_docx(year, qtr)
     # get all the docx files in the current directory
@@ -86,3 +75,15 @@ if __name__ == '__main__':
         master.add_paragraph()
     # save the master
     save_master_docx(fileLocation, masterFN, master)
+
+
+
+if __name__ == '__main__':
+    year = 2023
+    qtr = 'Q2'
+    fileLocation = 'C:/Users/Jeff/Downloads/2023Q2/'
+    sections = ["Publications:", "Conference Presentations:", "New Tools, Methods & Datasets:", "Impact and Uptake:",
+        "Capability and Funding:", "Teaching:", "Vision Mātauranga:", "Iwi/hapū & stakeholder engagement and public participation:", 
+        "Awards & Honours:", "Opportunities & Issues:", "Other:"]
+    main(year, qtr, fileLocation, sections)
+    
